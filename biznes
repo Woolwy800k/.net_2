@@ -1,0 +1,27 @@
+package demo.task1;
+
+import org.junit.jupiter.api.Test;
+
+import java.math.BigDecimal;
+
+public class BankTest {
+    private Bank bank = new BankImpl();
+
+    @Test
+    void testCreateAccount() {
+        Long id = bank.createAccount("a","b");
+        assert id !=null;
+        Long id2 = bank.createAccount("a","b");
+        assert id2 !=null;
+    }
+
+    @Test
+    void testDeposit() {
+        Long id = bank.createAccount("a","b");
+        bank.deposit(id, BigDecimal.valueOf(100L));
+        assert BigDecimal.valueOf(100L).equals(bank.getBalance(id));
+        bank.deposit(id,BigDecimal.TEN);
+        assert
+
+    }
+}
